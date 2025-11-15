@@ -23,3 +23,23 @@ Este mesmo prompt multimodal foi apresentado a quatro produtos de IA distintos, 
 - OpenAI ChatGPT (`GPT-5 Thinking Mini`);
 - Anthropic Claude (`Claude 4.5 Sonnet Thinking`);
 - Perplexity (`Claude 4.5 Sonnet Thinking`);
+
+## Resultados
+
+### [`chatgpt.tex`](./chatgpt.tex)
+
+Compilando com `pdflatex chatgpt.tex`, como sugerido.
+
+Primeiro erro:
+
+```
+! Package tikz Error: You need to say \usetikzlibrary{calc} for coordinate calc
+ulation.
+
+ ...
+l.84 \end{frame}
+```
+
+Seguindo a sugestão, a compilação termina com sucesso e temos, como resultado:
+
+![](assets/gen/chatgpt.png)
