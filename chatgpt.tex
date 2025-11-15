@@ -1,0 +1,86 @@
+% Gerado por GPT-5 Thinking Mini
+% Slide em aspecto 16:9 que reproduz a imagem fornecida.
+% Compile com pdflatex (ou lualatex/xelatex se preferir fontes do sistema).
+\documentclass[aspectratio=169]{beamer}
+\usetheme{default}
+\setbeamertemplate{navigation symbols}{}
+\setbeamercolor{background canvas}{bg=white}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
+
+\usepackage{mathpazo} % tipografia agradável (Palatino)
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{url}
+\usepackage{hyperref}
+\hypersetup{hidelinks}
+
+% cores
+\definecolor{lightgraytext}{RGB}{180,180,180}
+\definecolor{linkblue}{RGB}{64,120,235}
+
+% comando para "LATEXnicamente" compondo o logo LaTeX
+\newcommand{\LATEXnicamente}{%
+  {\Large\scshape\LaTeX}\raisebox{0.7ex}{\fontsize{18}{18}\selectfont nicamente}%
+}
+
+% pequena bandeira do Brasil em TikZ (aproximação estilizada)
+\newsavebox{\brazilflag}
+\sbox{\brazilflag}{%
+\begin{tikzpicture}[scale=0.08,baseline=-0.45ex]
+  \fill[green!60!black] (0,0) rectangle (20,14);
+  \fill[yellow!90!black] (10,7) ++(-7,0) -- ++(7,7) -- ++(7,0) -- ++(-7,-7) -- cycle;
+  \fill[blue] (10,7) circle (3.6);
+  \fill[white] (9.35,7.1) arc (200:-20:2.6 and 0.55);
+  % opcional: estrela central (simples)
+  \fill[white] (10,8) circle (0.25);
+\end{tikzpicture}%
+}
+
+% Para melhor layout: usamos um único frame plain
+\begin{document}
+
+\begin{frame}[plain]
+  % Cabeçalho pálido no topo (citação de exemplo)
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=north west, inner sep=12pt] at (current page.north west) {%
+      \parbox{0.6\paperwidth}{\color{lightgraytext}\small
+      LAMPORT, Leslie. \textsc{LaTeX}: A Document Preparation System. 2. ed. Reading: Addison-Wesley, 1994. ISBN 9780201529838.}
+    };
+  \end{tikzpicture}
+
+  % Conteúdo principal centralizado verticalmente
+  \vspace*{12mm}
+  \begin{center}
+    {\Huge\bfseries Referências Bibliográficas em}\\[6mm]
+
+    {\LARGE\ttfamily \textbackslash cite\{{\bfseries ABNT}\}}\\[12mm]
+
+    % Entrada bibliográfica simulada (como na imagem)
+    \parbox{0.88\textwidth}{\raggedright
+      {\large\scshape MARQUES, Daniel Ballester.} \textbf{Bib\LaTeX-ABNT:} \textit{Estilo para Bib\LaTeX\ compatível com as normas da ABNT}. [S. l.], 2018. Disponível em:\\[2pt]
+      {\ttfamily\small\url{https://ctan.org/pkg/biblatex-abnt}}. \\
+      Acesso em: 6 maio 2025.
+    }
+  \end{center}
+
+  % Rodapé: bandeira à esquerda e "LATEXnicamente" centralizado
+  \begin{tikzpicture}[remember picture,overlay]
+    % bandeira no rodapé esquerdo
+    \node[anchor=south west, inner sep=16pt] at (current page.south west) {\usebox{\brazilflag}};
+    % texto central inferior
+    \node[anchor=south, inner sep=6pt] at (current page.south) {\LATEXnicamente};
+  \end{tikzpicture}
+
+  % URL azul monoespaçada menor (estado similar ao da imagem)
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=west] at ($(current page.center) + (-0.44\paperwidth,-0.22\paperheight)$) {%
+      \parbox{0.5\paperwidth}{\small\ttfamily\color{linkblue}https://ctan.org/pkg/biblatex-abnt}
+    };
+  \end{tikzpicture}
+
+\end{frame}
+
+\end{document}

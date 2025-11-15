@@ -1,0 +1,73 @@
+% Gerado por Claude 4.5 Sonnet Thinking
+\documentclass[aspectratio=169]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{tikz}
+\usepackage{hyperref}
+
+% Configurações do tema
+\usetheme{default}
+\setbeamertemplate{navigation symbols}{}
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{normal text}{fg=black}
+
+\begin{document}
+
+\begin{frame}[plain]
+    % Citação no topo em cinza claro
+    \vspace*{0.5cm}
+    {\footnotesize\color{gray!50}
+    LAMPORT, Leslie. \LaTeX: A Document Preparation System. 2. ed. Reading:\\
+    Addison-Wesley, 1994. ISBN 9780201529838.
+    }
+
+    \vspace{1.5cm}
+
+    % Título principal
+    \begin{center}
+        {\Huge\bfseries Referências Bibliográficas em}
+
+        \vspace{0.3cm}
+
+        {\Huge\ttfamily \textbackslash cite\{ABNT\}}
+    \end{center}
+
+    \vspace{1.5cm}
+
+    % Segunda referência
+    {\footnotesize
+    MARQUES, Daniel Ballester. \textbf{Bib\LaTeX-ABNT}: Estilo para Bib\LaTeX{} compatível com\\
+    as normas da ABNT. [\textit{S. l.}], 2018. Disponível em:\\
+    \textcolor{blue}{\url{https://ctan.org/pkg/biblatex-abnt}}. Acesso em: 6 maio 2025.
+    }
+
+    \vspace{1cm}
+
+    % Bandeira do Brasil (canto inferior esquerdo)
+    \begin{tikzpicture}[remember picture, overlay]
+        \node[anchor=south west] at ([xshift=0.5cm, yshift=0.5cm]current page.south west) {
+            \begin{tikzpicture}[scale=0.6]
+                % Verde
+                \fill[green!50!black] (0,0) rectangle (3,2);
+                % Amarelo
+                \fill[yellow!80!orange] (1.5,1) -- (2.8,1) -- (1.5,0.2) -- (0.2,1) -- (1.5,1.8) -- cycle;
+                % Azul
+                \fill[blue!80!black] (1.5,1) circle (0.4);
+                % Faixa branca
+                \fill[white] (1.1,0.85) .. controls (1.3,1.1) and (1.7,1.1) .. (1.9,0.85) --
+                             (1.85,0.9) .. controls (1.68,1.05) and (1.32,1.05) .. (1.15,0.9) -- cycle;
+            \end{tikzpicture}
+        };
+    \end{tikzpicture}
+
+    % LaTeXnicamente (canto inferior direito)
+    \begin{tikzpicture}[remember picture, overlay]
+        \node[anchor=south east] at ([xshift=-0.5cm, yshift=0.8cm]current page.south east) {
+            {\fontsize{35}{40}\selectfont \LaTeX nicamente}
+        };
+    \end{tikzpicture}
+
+\end{frame}
+
+\end{document}

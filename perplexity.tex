@@ -1,0 +1,70 @@
+% Gerado por Perplexity Pro (Claude 4.5 Sonnet Thinking)
+\documentclass{article}
+
+% Página em proporção 16:9
+\usepackage[
+  paperwidth=16cm,
+  paperheight=9cm,
+  margin=0.8cm
+]{geometry}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+\pagestyle{empty}
+
+\begin{document}
+
+% Elementos sobrepostos (citação esmaecida, bandeira e logotipo)
+\begin{tikzpicture}[remember picture,overlay]
+
+  % Citação de Lamport ao fundo
+  \node[anchor=north west,text opacity=0.25]
+    at ([xshift=0pt,yshift=-8pt]current page.north west)
+    {\footnotesize
+      LAMPORT, Leslie. \LaTeX: A Document Preparation System.
+      2.\ ed. Reading: Addison\hyp{}Wesley, 1994. ISBN 9780201529838.};
+
+  % Bandeira do Brasil no canto inferior esquerdo
+  \node[anchor=south west]
+    at ([xshift=6pt,yshift=6pt]current page.south west){
+      \begin{tikzpicture}[scale=0.09]
+        \fill[green!60!black] (0,0) rectangle (20,14);
+        \fill[yellow] (10,7) ++(0,7) -- ++(10,-7) -- ++(-10,-7)
+                             -- ++(-10,7) -- cycle;
+        \fill[blue] (10,7) circle (4);
+        \draw[white,line width=0.7pt]
+          (3,9) .. controls (7,11) and (13,3) .. (17,5);
+      \end{tikzpicture}
+    };
+
+  % Logotipo "LaTeXnicamente" no rodapé central
+  \node[anchor=south]
+    at ([yshift=8pt]current page.south)
+    {\Large \LaTeX nicamente};
+
+\end{tikzpicture}
+
+% Título central
+\vspace*{1.8cm}
+\begin{center}
+  {\LARGE Referências Bibliográficas em\par}
+  \vspace{0.9em}
+  {\Huge\ttfamily \textbackslash cite\{ABNT\}\par}
+\end{center}
+
+\vfill
+
+% Referência em estilo ABNT
+\noindent\small
+MARQUES, Daniel Ballester. \textbf{Bib\LaTeX-ABNT}: Estilo para Bib\LaTeX{}
+compatível com as normas da ABNT. [S. l.], 2018. Disponível em:
+\texttt{https://ctan.org/pkg/biblatex-abnt}. Acesso em: 6 maio 2025.
+
+\end{document}

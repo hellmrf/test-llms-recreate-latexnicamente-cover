@@ -1,0 +1,103 @@
+% Gerado por Gemini 2.5 Pro
+% --- PREÂMBULO ---
+\documentclass[aspectratio=169]{beamer}
+
+% Codificação e fontes
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern} % Fonte moderna (Latin Modern)
+
+% Pacotes adicionais
+\usepackage{xcolor}     % Para cores personalizadas
+\usepackage{tikz}       % Para desenhar a bandeira
+\usepackage{hyperref}   % Para URLs clicáveis
+
+% --- CONFIGURAÇÕES GLOBAIS ---
+
+% Define as cores usadas na imagem
+\definecolor{mygray}{gray}{0.45}
+\definecolor{urlblue}{HTML}{0000EE} % Azul padrão de links web
+\definecolor{brazilgreen}{HTML}{009C3B}
+\definecolor{brazilyellow}{HTML}{FFDF00}
+\definecolor{brazilblue}{HTML}{002776}
+
+% Configura o hyperref para URLs
+\hypersetup{
+    colorlinks=true,
+    urlcolor=urlblue,
+    pdftitle={Referências Bibliográficas em LaTeX},
+    pdfauthor={Gemini},
+    pdfpagemode=FullScreen, % Abre em tela cheia
+}
+
+% Remove todos os elementos de navegação do Beamer
+\setbeamertemplate{navigation symbols}{}
+
+% Define a fonte padrão do documento como serifada (para as referências)
+\usefonttheme{serif}
+
+% Comando para desenhar a bandeira do Brasil (simplificada)
+% Auto-contido, não precisa de arquivos externos
+\newcommand{\brazilflag}{%
+  \begin{tikzpicture}[scale=0.18] % Ajusta o tamanho da bandeira
+    \fill[brazilgreen] (0,0) rectangle (3,2);
+    \fill[brazilyellow] (1.5,1) -- (0.3,1) -- (1.5,0.2) -- (2.7,1) -- cycle;
+    \fill[brazilblue] (1.5,1) circle (0.45);
+  \end{tikzpicture}%
+}
+
+% Configura o rodapé (logo)
+% O \logo é exibido mesmo em frames [plain]
+\logo{%
+  \vbox{%
+    \hbox to \paperwidth{%
+      \hskip.8cm % Margem esquerda
+      \brazilflag % Nosso comando da bandeira
+      \hfill % Empurra o texto para a direita
+      {\Huge \LaTeX nicamente} % O logo
+      \hskip.8cm % Margem direita
+    }%
+    \vskip.6cm % Margem inferior
+  }%
+}
+
+% --- DOCUMENTO ---
+\begin{document}
+
+% O frame [plain] remove o título e o rodapé padrão do Beamer
+\begin{frame}[plain]
+
+    % --- Referência Superior ---
+    \begingroup % Isola as mudanças de fonte/cor
+    \color{mygray}
+    \small % Tamanho de fonte pequeno
+    LAMPORT, Leslie. \textsc{LaTeX: A Document Preparation System}. 2. ed. Reading: Addison-Wesley, 1994. ISBN 9780201529838.
+    \endgroup
+
+    \vfill % Espaçador vertical flexível
+
+    % --- Bloco Central ---
+    \begin{center}
+        % Título (usa fonte sans-serif)
+        {\sffamily \Huge \bfseries Referências Bibliográficas em}
+
+        \\[0.7em] % Espaçamento vertical
+
+        % Comando (usa fonte monoespaçada)
+        {\color{mygray} \Huge \texttt{\textbackslash cite\{ABNT\}}}
+    \end{center}
+
+    \vfill % Espaçador vertical flexível
+
+    % --- Referência Inferior ---
+    \begingroup
+    \color{mygray}
+    \small
+    MARQUES, Daniel Ballester. \textsc{BibLaTeX-ABNT: Estilo para BibLaTeX compatível com as normas da ABNT}. [S. l.], 2018. Disponível em: \url{https://ctan.org/pkg/biblatex-abnt}. Acesso em: 6 maio 2025.
+    \endgroup
+
+    \vfill % Empurra a referência para cima, longe do logo no rodapé
+
+\end{frame}
+
+\end{document}
