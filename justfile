@@ -5,17 +5,14 @@ tex_files := 'chatgpt claude gemini perplexity'
 
 alias b := build
 alias bc := buildconvert
-alias B := buildall
 alias c := clean
 alias r := run
 alias ls := list
 alias help := list
 
 [default]
-buildall *args:
-    @for file in {{tex_files}}; do \
-        just build "$file" {{args}}; \
-    done
+list:
+    @just --list
 
 buildconvert filename: (build filename) && (png filename)
 
@@ -23,18 +20,15 @@ build filename *args="-v": && (png filename)
     @just _docker "arara {{args}} {{filename}}.tex"
 
 png filename: _check_imagemagick_convert
-    convert -density 300 "{{filename}}.pdf" -quality 90 "assets/gen/{{filename}}.png"
+    convert -density 300 "{{filename}}.pdf" -flatten -quality 90 "assets/gen/{{filename}}.png"
 
 # Limpa arquivos gerados
-clean:
-    @just _docker "latexmk -c"
+clean *args:
+    @just _docker "latexmk -c {{args}}"
 
 # Executa qualquer comando arbitrário no container
 run +args:
     @just _docker "{{args}}"
-
-list:
-    @just --list
 
 
 # Função auxiliar para rodar comandos no container
