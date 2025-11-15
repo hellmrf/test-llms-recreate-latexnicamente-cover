@@ -26,6 +26,14 @@ Este mesmo prompt multimodal foi apresentado a quatro produtos de IA distintos, 
 
 ## Resultados
 
+
+### [`claude.tex`](./claude.tex)
+
+Compilando com `pdflatex claude.tex`, temos, como resultado:
+
+![](assets/gen/claude.png)
+
+
 ### [`chatgpt.tex`](./chatgpt.tex)
 
 Compilando com `pdflatex chatgpt.tex`, como sugerido.
