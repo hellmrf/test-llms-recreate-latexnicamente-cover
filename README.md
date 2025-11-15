@@ -1,3 +1,6 @@
+# Teste de LLMs: Recriando Capa do LaTeXnicamente
+
+Este projeto avalia a capacidade de diferentes modelos de linguagem (LLMs) em reproduzir um documento LaTeX a partir de uma imagem de referência. O objetivo é comparar a qualidade e precisão do código LaTeX gerado por diferentes assistentes de IA ao receberem o mesmo prompt multimodal.
 
 ## Metodologia
 
@@ -26,7 +29,6 @@ Este mesmo prompt multimodal foi apresentado a quatro produtos de IA distintos, 
 
 ## Resultados
 
-
 ### [`claude.tex`](./claude.tex) ✅
 
 Compilando com `pdflatex claude.tex`, temos, como resultado:
@@ -38,6 +40,8 @@ Compilando com `pdflatex claude.tex`, temos, como resultado:
 
 Compilando com `pdflatex chatgpt.tex`, como sugerido.
 
+<details><summary>❌ Erros</summary>
+<p>
 Primeiro erro:
 
 ```plain
@@ -47,6 +51,8 @@ ulation.
  ...
 l.84 \end{frame}
 ```
+</p>
+</details>
 
 Seguindo a sugestão, a compilação termina com sucesso e temos, como resultado:
 
@@ -57,6 +63,8 @@ Seguindo a sugestão, a compilação termina com sucesso e temos, como resultado
 
 Compilando com `pdflatex perplexity.tex`, como sugerido.
 
+<details><summary>❌ Erros</summary>
+<p>
 Primeiro erro:
 
 ```plain
@@ -70,6 +78,8 @@ Trata-se deste trecho do código:
 https://github.com/hellmrf/test-llms-recreate-latexnicamente-cover/blob/657abcad926a1fc5558b7fc3e5ff644ddf5304a1/perplexity.tex#L31-L33
 
 Removendo `\hyp{}` completamente, a compilação termina com sucesso e temos, como resultado:
+</p>
+</details>
 
 ![](assets/gen/perplexity.png)
 
@@ -77,6 +87,8 @@ Removendo `\hyp{}` completamente, a compilação termina com sucesso e temos, co
 
 Compilando com `pdflatex gemini.tex`, como sugerido.
 
+<details><summary>❌ Erros</summary>
+<p>
 Primeiro erro:
 
 ```plain
@@ -90,6 +102,71 @@ Este erro é menos óbvio. Trata-se de um espaçamento incorreto:
 https://github.com/hellmrf/test-llms-recreate-latexnicamente-cover/blob/b909667170f0ebfa84d9ff4b89db7b8d143ac180/gemini.tex#L85
 
 Corrigindo para `\vspace{0.7em}`, a compilação termina com sucesso e temos, como resultado:
+</p>
+</details>
 
 ![](assets/gen/gemini.png)
+
+## Como Executar
+
+### Pré-requisitos
+
+- Docker
+- ImageMagick (para conversão de PDF para PNG)
+- [just](https://github.com/casey/just) (task runner)
+
+### Compilando os Documentos
+
+Para compilar um documento específico:
+
+```bash
+just build <filename>
+# ou
+just b <filename>
+```
+
+Por exemplo:
+```bash
+just build claude
+just b chatgpt
+```
+
+Para compilar e converter para PNG em um único comando:
+
+```bash
+just buildconvert <filename>
+# ou
+just bc <filename>
+```
+
+Para limpar todos os arquivos auxiliares gerados:
+
+```bash
+just clean
+# ou
+just c
+```
+Para limpar arquivos auxiliares gerados em arquivos específicos:
+
+```bash
+just clean chatgpt.tex gemini.tex
+# ou
+just c claude.tex
+```
+
+Para ver todos os comandos disponíveis:
+
+```bash
+just list
+# ou
+just ls
+# ou
+just help
+```
+
+## Autor
+
+**Heliton Martins** ([@hellmrf](https://github.com/hellmrf))
+
+Projeto criado para avaliar comparativamente a capacidade de geração de código LaTeX por diferentes LLMs comerciais.
 
