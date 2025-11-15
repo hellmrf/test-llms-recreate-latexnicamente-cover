@@ -40,7 +40,7 @@ Compilando com `pdflatex chatgpt.tex`, como sugerido.
 
 Primeiro erro:
 
-```
+```plain
 ! Package tikz Error: You need to say \usetikzlibrary{calc} for coordinate calc
 ulation.
 
@@ -52,13 +52,34 @@ Seguindo a sugestão, a compilação termina com sucesso e temos, como resultado
 
 ![](assets/gen/chatgpt.png)
 
+
+### [`perplexity.tex`](./perplexity.tex)
+
+Compilando com `pdflatex perplexity.tex`, como sugerido.
+
+Primeiro erro:
+
+```plain
+! Undefined control sequence.
+l.33       2.\ ed. Reading: Addison\hyp
+                                       {}Wesley, 1994. ISBN 9780201529838.};
+?
+```
+
+Trata-se deste trecho do código:
+https://github.com/hellmrf/test-llms-recreate-latexnicamente-cover/blob/657abcad926a1fc5558b7fc3e5ff644ddf5304a1/perplexity.tex#L31-L33
+
+Removendo `\hyp{}` completamente, a compilação termina com sucesso e temos, como resultado:
+
+![](assets/gen/perplexity.png)
+
 ### [`gemini.tex`](./gemini.tex)
 
 Compilando com `pdflatex gemini.tex`, como sugerido.
 
 Primeiro erro:
 
-```
+```plain
 ! LaTeX Error: There's no line here to end.
  ...
 l.102 \end{frame}
@@ -71,3 +92,4 @@ https://github.com/hellmrf/test-llms-recreate-latexnicamente-cover/blob/b9096671
 Corrigindo para `\vspace{0.7em}`, a compilação termina com sucesso e temos, como resultado:
 
 ![](assets/gen/gemini.png)
+
