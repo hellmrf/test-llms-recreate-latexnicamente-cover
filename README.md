@@ -43,3 +43,23 @@ l.84 \end{frame}
 Seguindo a sugestão, a compilação termina com sucesso e temos, como resultado:
 
 ![](assets/gen/chatgpt.png)
+
+### [`gemini.tex`](./gemini.tex)
+
+Compilando com `pdflatex gemini.tex`, como sugerido.
+
+Primeiro erro:
+
+```
+! LaTeX Error: There's no line here to end.
+ ...
+l.102 \end{frame}
+```
+
+Este erro é menos óbvio. Trata-se de um espaçamento incorreto:
+
+https://github.com/hellmrf/test-llms-recreate-latexnicamente-cover/blob/b909667170f0ebfa84d9ff4b89db7b8d143ac180/gemini.tex#L85
+
+Corrigindo para `\vspace{0.7em}`, a compilação termina com sucesso e temos, como resultado:
+
+![](assets/gen/gemini.png)
