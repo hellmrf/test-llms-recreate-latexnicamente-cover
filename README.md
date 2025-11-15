@@ -27,14 +27,14 @@ Este mesmo prompt multimodal foi apresentado a quatro produtos de IA distintos, 
 ## Resultados
 
 
-### [`claude.tex`](./claude.tex)
+### [`claude.tex`](./claude.tex) ✅
 
 Compilando com `pdflatex claude.tex`, temos, como resultado:
 
 ![](assets/gen/claude.png)
 
 
-### [`chatgpt.tex`](./chatgpt.tex)
+### [`chatgpt.tex`](./chatgpt.tex) ⚠️
 
 Compilando com `pdflatex chatgpt.tex`, como sugerido.
 
@@ -53,7 +53,7 @@ Seguindo a sugestão, a compilação termina com sucesso e temos, como resultado
 ![](assets/gen/chatgpt.png)
 
 
-### [`perplexity.tex`](./perplexity.tex)
+### [`perplexity.tex`](./perplexity.tex) ⚠️
 
 Compilando com `pdflatex perplexity.tex`, como sugerido.
 
@@ -73,7 +73,7 @@ Removendo `\hyp{}` completamente, a compilação termina com sucesso e temos, co
 
 ![](assets/gen/perplexity.png)
 
-### [`gemini.tex`](./gemini.tex)
+### [`gemini.tex`](./gemini.tex) ⚠️
 
 Compilando com `pdflatex gemini.tex`, como sugerido.
 
