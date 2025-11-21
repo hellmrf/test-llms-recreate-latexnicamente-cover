@@ -1,0 +1,85 @@
+% arara: pdflatex
+% Gerado por Gemini 3 Thinking
+\documentclass[aspectratio=169, 12pt]{beamer}
+
+% Pacotes essenciais
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{lmodern}     % Fontes vetoriais de alta qualidade
+\usepackage{tikz}        % Para posicionamento e desenho da bandeira
+\usepackage{hyperref}    % Para o link clicável
+\usepackage{xcolor}      % Cores personalizadas
+
+% Configurações visuais
+\setbeamertemplate{navigation symbols}{} % Remove ícones de navegação
+\setbeamercolor{background canvas}{bg=white} % Fundo branco
+
+% Definição de cores baseadas na imagem
+\definecolor{fadegray}{gray}{0.80} % Cinza claro para o texto do topo
+\definecolor{codeblack}{gray}{0.2} % Cinza escuro para o comando
+\definecolor{linkblue}{RGB}{50, 50, 180} % Azul/Roxo para o link
+\definecolor{flaggreen}{RGB}{0, 156, 59}
+\definecolor{flagyellow}{RGB}{255, 223, 0}
+\definecolor{flagblue}{RGB}{0, 39, 118}
+
+\begin{document}
+
+\begin{frame}[plain]
+\begin{tikzpicture}[remember picture, overlay]
+
+    % 1. Texto do Topo (Faded)
+    % Fonte Serifada, cor clara
+    \node[anchor=north, yshift=-0.8cm] at (current page.north) {
+        \parbox{0.9\paperwidth}{
+            \centering % Ou justify, mas na imagem parece centralizado/blocado
+            \rmfamily\color{fadegray}\small
+            LAMPORT, Leslie. \LaTeX: A Document Preparation System. 2. ed. Reading:\\
+            Addison-Wesley, 1994. ISBN 9780201529838.
+        }
+    };
+
+    % 2. Título Principal
+    % Fonte Sans-Serif, Negrito, Grande
+    \node[anchor=center, yshift=1.5cm] at (current page.center) {
+        \sffamily\bfseries\fontsize{30}{36}\selectfont Referências Bibliográficas em
+    };
+
+    % 3. O Comando em destaque
+    % Fonte Typewriter, Grande
+    \node[anchor=center, yshift=-0.2cm] at (current page.center) {
+        \ttfamily\fontsize{45}{50}\selectfont
+        \color{gray}\textbackslash cite\{\textbf{\color{black}ABNT}\}
+    };
+
+    % 4. A Referência Bibliográfica (Corpo)
+    % Fonte Serifada, alinhada à esquerda visualmente
+    \node[anchor=center, yshift=-2.5cm] at (current page.center) {
+        \parbox{0.85\paperwidth}{
+            \rmfamily\normalsize\color{gray}
+            MARQUES, Daniel Ballester. \textbf{\color{black}Bib\LaTeX-ABNT}: Estilo para Bib\LaTeX\ compatível com
+            as normas da ABNT. [S. l.], 2018. Disponível em:\\
+            \href{https://ctan.org/pkg/biblatex-abnt}{\color{linkblue}\ttfamily https://ctan.org/pkg/biblatex-abnt}. \rmfamily Acesso em: 6 maio 2025.
+        }
+    };
+
+    % 5. Rodapé: Bandeira do Brasil (Desenhada em TikZ para não precisar de imagem)
+    \node[anchor=south west, xshift=1cm, yshift=0.8cm] at (current page.south west) {
+        \begin{tikzpicture}[scale=0.04]
+            \fill[flaggreen] (0,0) rectangle (15,10.5); % Retângulo
+            \fill[flagyellow] (7.5, 9.3) -- (13.8, 5.25) -- (7.5, 1.2) -- (1.2, 5.25) -- cycle; % Losango
+            \fill[flagblue] (7.5, 5.25) circle (2.6); % Círculo
+            \draw[white, line width=2pt] (5, 5.8) to[out=-20, in=160] (10, 4.8); % Faixa simples
+        \end{tikzpicture}
+    };
+
+    % 6. Rodapé: Logo LaTeXnicamente
+    \node[anchor=south, yshift=0.8cm] at (current page.south) {
+        \fontsize{20}{24}\selectfont
+        \rmfamily \LaTeX nicamente
+    };
+
+\end{tikzpicture}
+\end{frame}
+
+\end{document}
